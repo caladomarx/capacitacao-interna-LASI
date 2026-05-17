@@ -15,5 +15,53 @@ Criar um sistema para gerenciamento de livros.
 
 #include <stdio.h>
 int main(){
-    printf("ten tereten tere... 123 ai ai ai aiaiai ai ai aiai uh uh uh uh uh uh... ê ê uh uh uh uh uh uh uh hehe bip bip bip-bip bip bi-oh yeah bip bip bip bip bip bip bip bi-fica de quato bip bip fica de- ten ten ten ten ten fica de quato ten ten ten fica de-ten ten ten-rai-rai ten ten ten rai-rai ten terereten... ten ten terereten... ai ai tenteretenteretenteretentereten-fica de quato weck weck fica de quato weckweckweck fica de quato weck ai fica de quato weckwe-123 ei 12 12 aiaiai bley bleybley aiaiai bley ui ui ui uiuiui ui 123 ui ui ui uiuiui não para vem-no-sapatin não pa-não para vem no sapatin ai ai!");
+    int opcao, i = 0;
+    char nome_livro[10][100];
+
+    while (1) {
+
+      /*----------------menu----------------*/
+        printf("====Biblioteca Pessoal====\n");
+        printf("1. Cadastrar livro\n");
+        printf("2. Listar livros\n");
+        printf("3. Buscar livro\n");
+        printf("4. Marcar livro como lido\n");
+        printf("5. Remover livro\n");
+        scanf("%d", &opcao);
+        
+        switch (opcao) {
+            case 1:
+                printf("insira o nome do livro %d: ", i);
+                scanf("%s", nome_livro[i]);
+                if (strcmp(nome_livro[i], "cancel") == 0) {
+                    printf("cancelando cadastro...\n");
+                    break;
+                }
+                else {
+                    printf("Livro cadastrado com sucesso.\n");
+                    i++;
+                }
+                break;
+                
+            case 2:
+                printf("Listar livros selecionado.\n");
+                break;
+            case 3:
+                printf("Buscar livro selecionado.\n");
+                break;
+            case 4:
+                printf("Marcar livro como lido selecionado.\n");
+                break;
+            case 5:
+                printf("Remover livro selecionado.\n");
+                break;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+
+
+        }
+    }
+
+    return 0;
+
 }
