@@ -52,7 +52,7 @@ int main(){
                 break;
 
             case 2:
-                printf("Listar livros selecionado.\n");
+                printf("Lista de livros cadastrados:\n");
                 for (int l = 0; l < i; l++) {
                     printf("Livro %d: %s", l + 1, nome_livro[l]);
                     if (strcmp(status_livro[l], "lido") == 0) {
@@ -104,8 +104,26 @@ int main(){
                     printf("Livro não encontrado.\n");
                 }
                 break;
+
             case 5:
-                printf("Remover livro selecionado.\n");
+                printf("qual livro deseja remover? ");
+                scanf("%s", busca);
+                encontrado = 0;
+                for (int l = 0; l < i; l++) {
+                    if (strcmp(nome_livro[l], busca) == 0) {
+                        for (int j = l; j < i - 1; j++) {
+                            strcpy(nome_livro[j], nome_livro[j + 1]);
+                            strcpy(status_livro[j], status_livro[j + 1]);
+                        }
+                        i--; // Reduz o contador de livros
+                        printf("Livro removido: %s\n", busca);
+                        encontrado = 1;
+                        break;
+                    }
+                }
+                if (!encontrado) {
+                    printf("Livro não encontrado.\n");
+                }
                 break;
             default:
                 printf("Opção inválida. Tente novamente.\n");
