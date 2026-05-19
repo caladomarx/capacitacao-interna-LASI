@@ -38,7 +38,7 @@ int main(){
 
     // Loop principal do programa. Continua até que o usuário escolha a opção 0.
     while (opcao != 0) {
-        system("clear"); // Limpa a tela (não indicado *portabilidade *eficiência).
+        system("cls || clear"); // Limpa a tela (não indicado *portabilidade *eficiência).
 
         /*----------------menu----------------*/
         printf("\n====Biblioteca Pessoal====\n");
@@ -52,7 +52,7 @@ int main(){
         scanf("%d", &opcao); // Lê a escolha do usuário.
 
         switch (opcao) {
-            case 1: system("clear");
+            case 1: system("cls || clear");
             {
                 int ch;
                 /* Limpa o resto da linha após a leitura da opção para evitar que o próximo fgets
@@ -102,7 +102,7 @@ int main(){
                 printf("Pressione Enter para continuar");
                 break;
 
-            case 2: system("clear");
+            case 2: system("cls || clear");
                 // Lista todos os livros cadastrados até o índice atual i.
                 printf("Lista de livros cadastrados:\n");
                 for (int l = 0; l < i; l++) {
@@ -119,7 +119,7 @@ int main(){
                 getchar();
                 break;
 
-            case 3: system("clear");
+            case 3: system("cls || clear");
                 // Busca livro pelo nome exato informado pelo usuário.
                 encontrado = 0;
                 printf("digite o nome do livro que deseja buscar: ");
@@ -145,7 +145,7 @@ int main(){
                 getchar();
                 break;
 
-            case 4: system("clear");
+            case 4: system("cls || clear");
                 // Marca o livro como lido se encontrado.
                 encontrado = 0;
                 printf("qual livro deseja marcar como lido? ");
@@ -165,7 +165,7 @@ int main(){
                 getchar();
                 break;
 
-            case 5: system("clear");
+            case 5: system("cls || clear");
                 // Remove o livro encontrado e desloca os elementos seguintes para preencher o espaço.
                 printf("qual livro deseja remover? ");
                 scanf("%s", busca);
@@ -188,12 +188,12 @@ int main(){
                 printf("\nPressione Enter para continuar");
                 getchar();
                 break;
-                case 0: system("clear");
+                case 0: system("cls || clear");
                 // Encerra o programa.
                 printf("Saindo do sistema. Até mais!\n");
                 return 0;
 
-            default: system("clear");
+            default: system("cls || clear");
                 // Caso o usuário digite uma opção inválida.
                 printf("Opção inválida. Tente novamente.\n");
                 getchar();
